@@ -19,3 +19,9 @@ COMPANY_NAME = 'ACME'
 
 # Palettes
 sample_palette_id = f'{COMPANY_NAME}_{ADDIN_NAME}_palette_id'
+
+
+design_workspace = 'FusionSolidEnvironment'
+create_panel_id = "SolidCreatePanel"
+sketch_tab_id= "SketchTab"
+sketch_create_panel_id= "SketchCreatePanel"

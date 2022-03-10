@@ -3,16 +3,12 @@
 # TODO Import the modules corresponding to the commands you created.
 # If you want to add an additional command, duplicate one of the existing directories and import it here.
 # You need to use aliases (import "entry" as "my_module") assuming you have the default module named "entry".
-from .commandDialog import entry as commandDialog
-from .paletteShow import entry as paletteShow
-from .paletteSend import entry as paletteSend
+from .logSpiral import entry as logSpiral
 
 # TODO add your imported modules to this list.
 # Fusion will automatically call the start() and stop() functions.
 commands = [
-    commandDialog,
-    paletteShow,
-    paletteSend
+    logSpiral
 ]
 
 
