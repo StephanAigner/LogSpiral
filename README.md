@@ -1,5 +1,5 @@
 # LogSpiral
-Fusion 360 AddIn für das Erzeugen von Exzenterspanner für Lochplatte.
+Fusion 360 AddIn für das Konstruieren von Exzenterspanner für Lochplatten.
 Mathematisch wurde die Logarithmische Spirale verwenden.
 (siehe https://de.wikipedia.org/wiki/Logarithmische_Spirale)
 
