@@ -9,9 +9,9 @@ from ... import config
 app = adsk.core.Application.get()
 ui = app.userInterface
 
-CMD_ID = f'{config.COMPANY_NAME}_{config.ADDIN_NAME}_exzenter_create'
-CMD_NAME = 'Create Exzenter'
-CMD_Description = 'Create Exzenter'
+CMD_ID = f'{config.COMPANY_NAME}_{config.ADDIN_NAME}_spirale_create'
+CMD_NAME = 'Create Spirale'
+CMD_Description = 'Create Spirale'
 ICON_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'resources', '')
 
 
@@ -69,8 +69,8 @@ def command_created(args: adsk.core.CommandCreatedEventArgs):
     selectedPointInput.addSelectionFilter(adsk.core.SelectionCommandInput.SketchPoints)
     selectedPointInput.setSelectionLimits(1,1)
     inputs.addIntegerSliderCommandInput('points_count', 'Count of Points',5,150,False)
-    inputs.addValueInput('min_value','Minumum Value of Exzenter',defaultLengthUnits,adsk.core.ValueInput.createByString('60'))
-    inputs.addValueInput('max_value','Maximum Value of Exzenter', defaultLengthUnits,adsk.core.ValueInput.createByString('120'))
+    inputs.addValueInput('min_value','Minumum Value of Spirale',defaultLengthUnits,adsk.core.ValueInput.createByString('60'))
+    inputs.addValueInput('max_value','Maximum Value of Spirale', defaultLengthUnits,adsk.core.ValueInput.createByString('120'))
     inputs.addAngleValueCommandInput('start_angle','Starting Angle',adsk.core.ValueInput.createByReal(50 * (math.pi/180.0)))
     inputs.addAngleValueCommandInput('end_angle','Ending Angle',adsk.core.ValueInput.createByReal(260 * (math.pi/180.0)))
     cb : adsk.core.BoolValueCommandInput =  inputs.addBoolValueInput ('splineTrue', 'spline', True)
@@ -88,7 +88,7 @@ def command_execute_preview(args: adsk.core.CommandEventArgs):
     mid_point: adsk.core.SelectionCommandInput = inputs.itemById('mid_point')
     point: adsk.fusion.SketchPoint = mid_point.selection(0).entity
 
-    draw_exzenter(  points_count=points_count.valueOne,
+    draw_spirale(  points_count=points_count.valueOne,
                     min_value= min_value.value,
                     max_value=max_value.value,
                     start_angle=start_angle.value,
@@ -109,7 +109,7 @@ def command_execute(args: adsk.core.CommandEventArgs):
     mid_point: adsk.core.SelectionCommandInput = inputs.itemById('mid_point')
     point: adsk.fusion.SketchPoint = mid_point.selection(0).entity
 
-    draw_exzenter(  points_count=points_count.valueOne,
+    draw_spirale(  points_count=points_count.valueOne,
                     min_value= min_value.value,
                     max_value=max_value.value,
                     start_angle=start_angle.value,
@@ -123,9 +123,9 @@ def command_destroy(args: adsk.core.CommandEventArgs):
     futil.log(f'{CMD_NAME} Command Destroy Event')
 
 
-def draw_exzenter(points_count: int,min_value:float,max_value:float,start_angle:float,end_angle:float,splineTrue1: bool,
+def draw_spirale(points_count: int,min_value:float,max_value:float,start_angle:float,end_angle:float,splineTrue1: bool,
                   mid_point: adsk.core.Point3D      ):
-    futil.log(f'{CMD_NAME} draw_exzenter')
+    futil.log(f'{CMD_NAME} draw_spirale')
     diff_angle = (end_angle-start_angle)/points_count
     points = adsk.core.ObjectCollection.create()
     i=0
