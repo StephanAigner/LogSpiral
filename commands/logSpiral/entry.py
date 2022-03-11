@@ -10,7 +10,7 @@ app = adsk.core.Application.get()
 ui = app.userInterface
 
 CMD_ID = f'{config.COMPANY_NAME}_{config.ADDIN_NAME}_spirale_create'
-CMD_NAME = 'Create Spirale'
+CMD_NAME = 'Spirale'
 CMD_Description = 'Create Spirale'
 ICON_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'resources', '')
 
